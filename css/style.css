@@ -2,10 +2,15 @@
 	position: relative;
 	border-radius: 20px;
 	background-color: white;
-	width: 75%;
+	width: calc(100% - 32px);
 	max-width: 400px;
 	margin: 0 auto;
 	top: 20vh;
+	text-align: center;
+}
+
+.modal-content {
+	overflow: hidden;
 }
 
 .modal-backdrop {
@@ -14,4 +19,38 @@
 	overflow: hidden;
 	position: fixed;
 	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sign-content {
+	list-style: none;
+	margin-block-start: 0;
+	margin-block-end: 0;
+	padding-inline-start: 0;
+	padding: 6%;
+}
+
+.sign-content::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.sign-content li {
+	width: 20%;
+	float: left;
+}
+.borner-circle {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	font-size: 0.85rem;
+	line-height: 30px;
+	color: white;
+	border-radius: 50%;
+	background-color: blueviolet;
+	margin-bottom: 5px;
+}
+.day-text {
+	display: block;
+	font-size: 0.75rem;
 }
