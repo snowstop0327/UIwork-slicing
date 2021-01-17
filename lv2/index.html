@@ -18,7 +18,7 @@
 		</ul>
 		<div class="month-select">
 			<h2 id="select-text">November</h2>
-			<select>
+			<select id="month" onChange="myNewFunction(this);">
 				<option>January</option>
 				<option>February</option>
 				<option>March</option>
@@ -175,8 +175,11 @@
 	</div>
 </body>
 
-<script type="text">
-	
+<script type="text/javascript">
+	function myNewFunction(element) {
+		var text = element.options[element.selectedIndex].text;
+		document.getElementById("select-text").innerHTML = text;
+	}
 </script>
 
 </html>
