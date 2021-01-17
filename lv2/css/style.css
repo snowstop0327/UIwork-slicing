@@ -226,7 +226,7 @@ footer img {
     width: fit-content;
     white-space: nowrap;
     padding: 0px 16px 24px 16px;
-    background-image: url(../img/scroll-bg.png);
+    background-image: url(../img/scroll-bg.svg);
     background-repeat: repeat-x;
 }
 
