@@ -34,6 +34,11 @@ ul {
     border-radius: 18px;
 }
 
+.button.is-complete {
+    background-color: #6C62C0;
+    color: #f5f3f7;
+}
+
 .fab.add-activity {
     position: fixed;
     right: 16px;
@@ -235,7 +240,8 @@ footer img {
 .scroll-infocard {
     position: relative;
     width: fit-content;
-    white-space: nowrap;
+    display: flex;
+    /* white-space: nowrap; */
     padding: 0px 16px 24px 16px;
     /* background-image: url(../img/scroll-bg.svg); */
     /* background-repeat: repeat-x; */
@@ -268,11 +274,16 @@ footer img {
     display: inline-block;
     position: relative;
     z-index: 1;
+    max-width: 80%;
+    min-width: 262px;
+    margin-right: 16px;
+}
+
+.scroll-infocard li:last-child {
+    margin-right: 0;
 }
 
 .scroll-stage .card {
-    margin-right: 8px;
-    width: 262px;
     box-shadow: 8px 16px 12px rgba(131, 145, 248, 0.05), 4px 8px 18px rgba(75, 93, 225, 0.1);
 }
 
