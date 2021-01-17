@@ -165,54 +165,56 @@ footer img {
 
 /* 月選擇器內容 START */
 .month-select {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     max-width: 100%;
     position: relative;
-    vertical-align: top;
+    padding: 12px 0;
+    /* vertical-align: top; */
     /* height: 2.5rem; */
-    box-sizing: border-box;
-    clear: both;
-    text-align: inherit;
 }
 
-.month-select select {
-    background-color: transparent;
-    border: 0;
-    outline: 0;
+.month-select #select-text {
     color: white;
     font-size: 2rem;
     font-weight: bold;
-    line-height: 1.5;
-    vertical-align: top;
-    cursor: pointer;
-    display: block;
+    margin: 0;
+    margin-left: 16px;
+    display: inline-block;
     position: relative;
-    max-width: 100%;
-    padding-right: 2.5rem;
-    padding-bottom: calc(.5em - 1px);
-    padding-left: calc(.75em - 1px);
-    padding-top: calc(.5em - 1px);
-    box-shadow: none;
-    -webkit-appearance: none;
 }
 
-.month-select select:after {
+.month-select #select-text:after {
     content: " ";
-    display: block;
+    position: absolute;
+    right: -28px;
+    top: 12px;
+    display: inline-block;
     border: 3px solid white;
     border-radius: 2px;
     border-right: 0;
     border-top: 0;
-    height: .625em;
-    margin-top: -.4375em;
-    pointer-events: none;
-    position: absolute;
-    top: 50%;
     transform: rotate(-45deg);
     transform-origin: center;
-    width: .625em;
-    right: 1.125em;
-    z-index: 4;
+    width: 8px;
+    height: 8px;
+}
+.month-select select {
+    opacity: 0;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    max-width: 100%;
+    width: 100vw;
+    box-shadow: none;
+    -webkit-appearance: none;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 /* 月選擇器內容 END */
