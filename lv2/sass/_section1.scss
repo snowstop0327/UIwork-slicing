@@ -1,0 +1,335 @@
+:root {
+    --header-color: #5A6DF6;
+}
+
+body {
+    background-color: var(--header-color);
+}
+
+main {
+    margin-top: 134px;
+    padding-bottom: 80px;
+    background-color: #f3f4f6;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
+
+.icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
+.button {
+    background-color: #f5f3f7;
+    color: #6C62C0;
+    font-weight: bold;
+    padding: 10px 14px;
+    border-radius: 18px;
+}
+
+.button.is-complete {
+    background-color: #6C62C0;
+    color: #f5f3f7;
+}
+
+.fab.add-activity {
+    position: fixed;
+    right: 16px;
+    bottom: calc(24px + 56px);
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #FCBD2D;
+    box-shadow: 0px 4px 8px rgba(252, 189, 45, 0.07), 2px 9px 24px rgba(252, 189, 45, 0.29);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fab.add-activity .border {
+    position: relative;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+}
+
+.fab.add-activity .border::before,.fab.add-activity .border::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 22px;
+    background-color: white;
+    left: 10px;
+}
+
+.fab.add-activity .border::after {
+    transform: rotate(90deg);
+}
+
+/* 卡片內容 START */
+.card {
+    font-size: 1rem;
+    color: #5e5658;
+    background-color: white;
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: 2px 4px 8px rgba(131, 145, 248, 0.05);
+}
+
+.card .title {
+    margin: 0 0 8px;
+}
+
+.card .time {
+    display: inline-block;
+    font-size: 0.875rem;
+    color: #c8c8c8;
+    margin-bottom: 8px;
+}
+
+.card .footer {
+    display: flex;
+    align-items: center;
+}
+
+.card .footer .member-img {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.card .footer .button {
+    margin-left: auto;
+}
+
+/* 卡片內容 END */
+
+/* 頭部內容 START */
+header {
+    width: 100vw;
+    height: 134px;
+    overflow: hidden;
+    background-color: var(--header-color);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+
+}
+
+.top-nav {
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 頭部內容  END */
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    background-color: #f3f4f6;
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.05);
+    height: 56px;
+    display: flex;
+    justify-content: center;
+}
+
+footer ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    max-width: 80%;
+}
+
+footer ul li {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer ul li.current-page:after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #6C62C0;
+    top: 48px;
+}
+
+footer img {
+    width: 24px;
+    height: 24px;
+}
+
+
+/* 月選擇器內容 START */
+.month-select {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    position: relative;
+    padding: 12px 0;
+    /* vertical-align: top; */
+    /* height: 2.5rem; */
+}
+
+.month-select #select-text {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    margin-left: 16px;
+    display: inline-block;
+    position: relative;
+}
+
+.month-select #select-text:after {
+    content: " ";
+    position: absolute;
+    right: -28px;
+    top: 12px;
+    display: inline-block;
+    border: 2px solid white;
+    border-radius: 2px;
+    border-right: 0;
+    border-top: 0;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    transform: rotate(-45deg);
+    transform-origin: center;
+    width: 8px;
+    height: 8px;
+}
+.month-select select {
+    opacity: 0;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    max-width: 100%;
+    width: 100vw;
+    box-shadow: none;
+    -webkit-appearance: none;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* 月選擇器內容 END */
+
+/* 滾動條內容 START */
+.scroll-stage {
+    overflow-x: auto;
+}
+
+.scroll-infocard {
+    position: relative;
+    width: fit-content;
+    display: flex;
+    /* white-space: nowrap; */
+    padding: 0px 16px 24px 16px;
+    /* background-image: url(../img/scroll-bg.svg); */
+    /* background-repeat: repeat-x; */
+}
+
+.scroll-infocard::before {
+    content: "";
+    position: absolute;
+    background-color: var(--header-color);
+    width: 100%;
+    height: 11px;
+    top: 0;
+    left: 0;
+    display: block;
+}
+
+.scroll-infocard::after {
+    content: "";
+    position: absolute;
+    top:11px;
+    left: 0px;
+    z-index: 0;
+    width: 100%;
+    height: 72px;
+    background-image: url(../img/scroll-bg.svg);
+    background-repeat: repeat-x;
+}
+
+.scroll-infocard li {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    max-width: 80%;
+    min-width: 262px;
+    margin-right: 16px;
+}
+
+.scroll-infocard li:last-child {
+    margin-right: 0;
+}
+
+.scroll-stage .card {
+    box-shadow: 8px 16px 12px rgba(131, 145, 248, 0.05), 4px 8px 18px rgba(75, 93, 225, 0.1);
+}
+
+.scroll-stage .card .title {
+    font-weight: normal;
+}
+
+/* 滾動條內容 END */
+
+.main-content {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.main-content li {
+    display: flex;
+}
+
+.infocard-group .card:first-child {
+    margin-top: 8px;
+}
+
+.date-info {
+    display: inline-block;
+    text-align: center;
+    color: #c8c8c8;
+    font-weight: normal;
+    font-size: 0.875rem;
+    margin: 0;
+    margin-right: 8px;
+}
+
+.date-info strong {
+    display: block;
+    color: #5e5658;
+    font-size: 2rem;
+}
+
+.main-content li.is-today .date-info strong {
+    color: #6C62C0;
+
+}
+
+.main-content .infocard-group {
+    width: 100%;
+}
+
+.infocard-group .card {
+    margin-bottom: 16px;
+}

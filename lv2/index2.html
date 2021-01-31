@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#5A6DF6">
+    <title>第二關-2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="modal add-event">
+        <div class="header">
+            <ul class="top-nav">
+                <li><img src="img/icon/arrow-left.svg" alt=""></li>
+                <li>
+                    <h2>Add New Event</h2>
+                </li>
+            </ul>
+            <div class="title-edit">
+                <input type="text" placeholder="Enter Title" class="">
+                <span class="is-border-bottom"></span>
+            </div>
+        </div>
+        <ul class="modal-body">
+            <li class="collapse-show">
+                <div class="card add-date">
+                    <div class="head">
+                        <img src="img/icon/clock.svg" alt="時間">
+                        <h3>Event Date</h3>
+                        <div class="switch-button">
+                            <input type="checkbox" id="switch">
+                            <label for="switch">
+                                <span class="switch-title">Day</span>
+                                <span class="switch"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="date-info">
+                            <h3 class="date">
+                                <span>From</span>
+                                Nov 19,2020
+                            </h3>
+                            <span>14:30</span>
+                        </div>
+                        <div class="date-info">
+                            <h3 class="date">
+                                <span>to</span>
+                                Nov 19,2020
+                            </h3>
+                            <span>15:30</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="collapse-hide">
+                <div class="card add-location">
+                    <div class="head">
+                        <img src="img/icon/clock.svg" alt="時間">
+                        <h3 class="is-placehold">Add Location</h3>
+                        <div class="button is-close"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="collapse-show">
+                <div class="card add-Notifacation">
+                    <div class="head">
+                        <img src="img/icon/notification.svg" alt="提醒">
+                        <h3>1 Hour Before</h3>
+                        <div class="button is-close"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="button is-fullwidth icon-left is-gray">
+                            Add Notifacation
+                            <img src="img/icon/add.svg" alt="新增">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="collapse-hide">
+                <div class="card add-people">
+                    <div class="head">
+                        <img src="img/icon/people.svg" alt="成員">
+                        <h3 class="is-placehold">Add People</h3>
+                        <div class="button is-close"></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="footer">
+            <a class="button is-primary is-fullwidth icon-right" href="#">Save
+                <img src="img/icon/Tick.svg" alt="儲存成功">
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
