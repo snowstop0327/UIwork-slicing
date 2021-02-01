@@ -715,4 +715,114 @@ footer img {
   margin-bottom: 16px;
 }
 
+::-moz-selection {
+  background-color: #5A6DF6;
+  color: #fff;
+}
+
+::selection {
+  background-color: #5A6DF6;
+  color: #fff;
+}
+
+.add-event {
+  background: linear-gradient(180deg, #FDD330 0%, #FBB12B 100%);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  min-height: 100vh;
+  overflow: auto;
+}
+
+.modal .header {
+  background-color: #FDD330;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+}
+
+.modal .top-nav {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 8px 24px;
+}
+
+.modal .top-nav h2 {
+  margin: 0 auto;
+  color: #5e5658;
+  font-size: 1.25rem;
+  line-height: 26.6px;
+  font-weight: 700;
+  padding-right: 38px;
+}
+
+.modal .title-edit {
+  font-size: 2rem;
+  line-height: 42.56px;
+  font-weight: 700;
+  margin: 16px 32px;
+  transition: 300ms ease all;
+}
+
+.modal .title-edit input {
+  color: #5e5658;
+  background-color: transparent;
+  border: 0px;
+  width: 100%;
+  padding: 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #fff;
+}
+
+.modal .title-edit input:focus, .modal .title-edit input:hover, .modal .title-edit input:active {
+  outline: 0;
+}
+
+.modal .title-edit input:focus ~ .bar:before {
+  width: 100%;
+}
+
+.modal .title-edit ::-webkit-input-placeholder {
+  color: rgba(94, 86, 88, 0.1);
+}
+
+.modal .title-edit ::-moz-placeholder {
+  color: rgba(94, 86, 88, 0.1);
+}
+
+.modal .title-edit :-ms-input-placeholder {
+  color: rgba(94, 86, 88, 0.1);
+}
+
+.modal .title-edit ::placeholder {
+  color: rgba(94, 86, 88, 0.1);
+}
+
+.modal .title-edit .bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.modal .title-edit .bar:before {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 0px;
+  position: absolute;
+  background: #5A6DF6;
+  transition: 300ms ease all;
+  left: 0%;
+}
+
+.modal .modal-body {
+  margin-top: 122px;
+}
+
 /*# sourceMappingURL=style.css.map */
