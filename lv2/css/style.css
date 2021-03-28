@@ -729,6 +729,88 @@ footer img {
   background: linear-gradient(180deg, #FDD330 0%, #FBB12B 100%);
 }
 
+.button {
+  padding: 16px 24px;
+  text-decoration: none;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 1px solid transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.button.is-primary {
+  color: #fff;
+  background: linear-gradient(270deg, #6D45E0 0%, #4F71F7 100%);
+}
+
+.button.is-gray {
+  color: rgba(94, 86, 88, 0.7);
+}
+
+.button.icon-right img {
+  height: 1.5em;
+  width: 1.5em;
+  margin-left: 0.5rem;
+}
+
+.button.icon-left img {
+  height: 1.5em;
+  width: 1.5em;
+  margin-right: 0.5rem;
+  -webkit-order: -1;
+  -ms-flex-order: -1;
+  order: -1;
+}
+
+.button.is-fullwidth {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.button.is-close {
+  background-color: transparent;
+  width: 1.5em;
+  height: 1.5rem;
+  padding: 0;
+  border: 0;
+  position: relative;
+}
+
+.button.is-close:before, .button.is-close:after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 18px;
+  background-color: #5e5658;
+}
+
+.button.is-close:before {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.button.is-close:after {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -744,6 +826,19 @@ footer img {
   position: fixed;
   width: 100vw;
   top: 0;
+}
+
+.modal .footer {
+  padding: 32px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modal .footer .button {
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .modal .top-nav {
@@ -823,6 +918,111 @@ footer img {
 
 .modal .modal-body {
   margin-top: 122px;
+}
+
+.modal .modal-body li {
+  margin: 8px 32px;
+}
+
+.modal .card {
+  background-color: transparent;
+  -webkit-filter: drop-shadow(2px 4px 8px rgba(131, 145, 248, 0.05));
+  filter: drop-shadow(2px 4px 8px rgba(131, 145, 248, 0.05));
+  padding: 0px;
+  overflow: hidden;
+}
+
+.modal .card .head {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #fff;
+  padding: 16px;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.modal .card .head h3 {
+  display: inline-block;
+  margin: 0 auto 0 8px;
+  font-weight: normal;
+}
+
+.modal .card .head h3.is-placehold {
+  color: rgba(94, 86, 88, 0.3);
+}
+
+.modal .card .card-body {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 16px;
+}
+
+.modal .add-Notifacation .head {
+  border-radius: 16px;
+}
+
+.modal .add-Notifacation .card-body {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: -56px;
+  padding-top: 56px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 8px;
+}
+
+.modal .add-Notifacation .card-body .button {
+  background-color: transparent;
+  -webkit-justify-content: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+}
+
+.switch-button input {
+  display: none;
+  position: relative;
+}
+
+.switch-button input + label {
+  display: block;
+  text-align: left !important;
+  color: rgba(94, 86, 88, 0.3);
+}
+
+.switch-button input + label span.switch {
+  display: inline-block;
+  width: 41px;
+  height: 20px;
+  float: right;
+  border-radius: 11px;
+  margin-left: 8px;
+  background-color: rgba(120, 120, 128, 0.16);
+  transition: all ease 300ms;
+}
+
+.switch-button input + label span.switch:before {
+  content: '';
+  position: absolute;
+  background-color: #AAAAAF;
+  margin-top: 2px;
+  margin-left: 2px;
+  height: 16px;
+  width: 16px;
+  border-radius: 15px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
+  transition: all ease 300ms;
+}
+
+.switch-button input:checked + label span.switch {
+  background-color: #5A6DF6;
+  border-color: #5A6DF6;
+}
+
+.switch-button input:checked + label span:before {
+  margin-left: 23px;
+  background-color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,6 +1,8 @@
 $main-body-color: #5e5658;
 $hl-color: #5A6DF6;
 $trans-time: 300ms;
+$light-gray: rgba(94, 86, 88, 0.3);
+
 
 
 ::selection {
@@ -11,6 +13,77 @@ $trans-time: 300ms;
 .add-event {
     background: linear-gradient(180deg, #FDD330 0%, #FBB12B 100%);
 }
+
+.button {
+    padding: 16px 24px;
+    text-decoration: none;
+    display: inline-flex;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+    user-select: none;
+
+    &.is-primary {
+        color: #fff;
+        background: linear-gradient(270deg, #6D45E0 0%, #4F71F7 100%);
+    }
+
+    &.is-gray {
+        color: rgba(94, 86, 88, 0.7);
+    }
+
+    &.icon-right {
+        img {
+            height: 1.5em;
+            width: 1.5em;
+            margin-left: 0.5rem;
+        }
+
+    }
+
+    &.icon-left {
+        img {
+            height: 1.5em;
+            width: 1.5em;
+            margin-right: 0.5rem;
+            order: -1;
+        }
+    }
+
+    
+
+    &.is-fullwidth {
+        display: flex;
+        width: 100%;
+    }
+
+    &.is-close {
+        background-color: transparent;
+        width: 1.5em;
+        height: 1.5rem;
+        padding: 0;
+        border: 0;
+        position: relative;
+        &:before, &:after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 18px;
+            background-color: $main-body-color;
+        }
+        &:before {
+            transform: rotate(45deg);
+        }
+        &:after {
+            transform: rotate(-45deg);
+        }
+
+    }
+}
+
 
 .modal {
     position: fixed;
@@ -26,6 +99,14 @@ $trans-time: 300ms;
         position: fixed;
         width: 100vw;
         top: 0;
+    }
+
+    .footer {
+        padding: 32px;
+        display: flex;
+        .button {
+            justify-content: space-between;
+        }
     }
 
     .top-nav {
@@ -63,7 +144,8 @@ $trans-time: 300ms;
             &:active {
                 outline: 0;
             }
-            &:focus ~ .bar:before {
+
+            &:focus~.bar:before {
                 width: 100%;
             }
         }
@@ -72,7 +154,7 @@ $trans-time: 300ms;
             color: rgba(94, 86, 88, 0.1);
         }
 
-        
+
 
         .bar {
             position: relative;
@@ -95,6 +177,114 @@ $trans-time: 300ms;
 
     .modal-body {
         margin-top: 122px;
+
+        li {
+            margin: 8px 32px;
+        }
     }
 
+    .card {
+        background-color: transparent;
+        filter: drop-shadow(2px 4px 8px rgba(131, 145, 248, 0.05));
+        padding: 0px;
+        overflow: hidden;
+
+        .head {
+            display: flex;
+            background-color: #fff;
+            padding: 16px; //第一項的padding跟其他不同，切版比較困擾
+            align-items: center;
+
+            h3 {
+                display: inline-block;
+                margin: 0 auto 0 8px;
+                font-weight: normal;
+                &.is-placehold {
+                    color: $light-gray;
+                }
+            }
+        }
+
+        .card-body {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 16px;
+
+        }
+    }
+    .add-Notifacation {
+        .head {
+            border-radius: 16px;
+        }
+
+        .card-body {
+            display: flex;
+            margin-top: -56px;
+            padding-top: 56px;
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 8px;
+            .button {
+                background-color: transparent;
+                justify-content: start;
+            }
+        }
+        
+    }
+}
+
+.switch-button {
+    input {
+        display: none;
+        position: relative;
+
+        +label {
+            display: block;
+            // padding: 10px;
+            text-align: left !important;
+            color: $light-gray;
+
+            span.switch {
+                display: inline-block;
+                width: 41px;
+                height: 20px;
+                float: right;
+                border-radius: 11px;
+                // margin-right: 10px;
+                margin-left: 8px;
+                background-color: rgba(120, 120, 128, 0.16);
+                transition: all ease 300ms;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    background-color: #AAAAAF;
+                    margin-top: 2px;
+                    margin-left: 2px;
+                    height: 16px;
+                    width: 16px;
+                    border-radius: 15px;
+                    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
+                    transition: all ease 300ms;
+                }
+            }
+        }
+
+        &:checked {
+            +label {
+                span {
+                    &.switch {
+                        background-color: $hl-color;
+                        border-color: $hl-color;
+                    }
+
+                    &:before {
+                        margin-left: 23px;
+                        background-color: #fff;
+                    }
+
+                }
+            }
+        }
+
+    }
 }
