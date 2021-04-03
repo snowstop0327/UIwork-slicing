@@ -726,7 +726,7 @@ footer img {
 }
 
 .add-event {
-  background: linear-gradient(180deg, #FDD330 0%, #FBB12B 100%);
+  background: #FBB12B;
 }
 
 .button {
@@ -826,6 +826,7 @@ footer img {
   position: fixed;
   width: 100vw;
   top: 0;
+  z-index: 100;
 }
 
 .modal .footer {
@@ -833,6 +834,7 @@ footer img {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-top: -122px;
 }
 
 .modal .footer .button {
@@ -918,6 +920,8 @@ footer img {
 
 .modal .modal-body {
   margin-top: 122px;
+  padding-bottom: 122px;
+  background: linear-gradient(180deg, #FDD330 0%, #FBB12B 100%);
 }
 
 .modal .modal-body li {
@@ -958,6 +962,44 @@ footer img {
   padding: 16px;
 }
 
+.modal .date-info {
+  color: #5e5658;
+  padding: 16px 8px;
+  margin: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.modal .date-info:first-child {
+  margin: -16px 0 0 0;
+}
+
+.modal .date-info .date {
+  text-align: left;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.modal .date-info .date span {
+  display: block;
+  font-weight: normal;
+  color: rgba(94, 86, 88, 0.7);
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.modal .date-info > span {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
 .modal .add-Notifacation .head {
   border-radius: 16px;
 }
@@ -971,6 +1013,7 @@ footer img {
   padding-left: 0;
   padding-right: 0;
   padding-bottom: 8px;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .modal .add-Notifacation .card-body .button {
@@ -1023,6 +1066,19 @@ footer img {
 .switch-button input:checked + label span:before {
   margin-left: 23px;
   background-color: #fff;
+}
+
+.date-range, .single-date {
+  transition: 0.5s all ease-in-out;
+}
+
+.single-date {
+  text-align: center;
+  font-size: 34px;
+}
+
+.is-close {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

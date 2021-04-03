@@ -35,21 +35,28 @@
                             </label>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <div class="date-info">
+                    <div class="card-body" id="change-date">
+                        <section class="date-range">
+                            <div class="date-info">
+                                <h3 class="date">
+                                    <span>From</span>
+                                    Nov 19,2020
+                                </h3>
+                                <span>14:30</span>
+                            </div>
+                            <div class="date-info">
+                                <h3 class="date">
+                                    <span>to</span>
+                                    Nov 19,2020
+                                </h3>
+                                <span>15:30</span>
+                            </div>
+                        </section>
+                        <section class="single-date is-close">
                             <h3 class="date">
-                                <span>From</span>
                                 Nov 19,2020
                             </h3>
-                            <span>14:30</span>
-                        </div>
-                        <div class="date-info">
-                            <h3 class="date">
-                                <span>to</span>
-                                Nov 19,2020
-                            </h3>
-                            <span>15:30</span>
-                        </div>
+                        </section>
                     </div>
                 </div>
             </li>
@@ -92,5 +99,14 @@
         </div>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+    $("#switch").change(function () {
+        $(".date-range").toggleClass("is-close", this.checked);
+        $(".single-date").toggleClass("is-close");
+
+    }).triggerHandler('click');;
+</script>
 
 </html>

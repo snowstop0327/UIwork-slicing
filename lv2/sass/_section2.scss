@@ -11,7 +11,7 @@ $light-gray: rgba(94, 86, 88, 0.3);
 }
 
 .add-event {
-    background: linear-gradient(180deg, #FDD330 0%, #FBB12B 100%);
+    background: #FBB12B;
 }
 
 .button {
@@ -53,7 +53,7 @@ $light-gray: rgba(94, 86, 88, 0.3);
         }
     }
 
-    
+
 
     &.is-fullwidth {
         display: flex;
@@ -67,16 +67,20 @@ $light-gray: rgba(94, 86, 88, 0.3);
         padding: 0;
         border: 0;
         position: relative;
-        &:before, &:after {
+
+        &:before,
+        &:after {
             content: "";
             position: absolute;
             width: 2px;
             height: 18px;
             background-color: $main-body-color;
         }
+
         &:before {
             transform: rotate(45deg);
         }
+
         &:after {
             transform: rotate(-45deg);
         }
@@ -99,11 +103,14 @@ $light-gray: rgba(94, 86, 88, 0.3);
         position: fixed;
         width: 100vw;
         top: 0;
+        z-index: 100;
     }
 
     .footer {
         padding: 32px;
         display: flex;
+        margin-top: -122px; // 讓footer能吃到modal-body底部的背景色
+
         .button {
             justify-content: space-between;
         }
@@ -177,6 +184,8 @@ $light-gray: rgba(94, 86, 88, 0.3);
 
     .modal-body {
         margin-top: 122px;
+        padding-bottom: 122px; //讓底部也能吃到顏色
+        background: linear-gradient(180deg, #FDD330 0%, #FBB12B 100%);
 
         li {
             margin: 8px 32px;
@@ -199,6 +208,7 @@ $light-gray: rgba(94, 86, 88, 0.3);
                 display: inline-block;
                 margin: 0 auto 0 8px;
                 font-weight: normal;
+
                 &.is-placehold {
                     color: $light-gray;
                 }
@@ -211,6 +221,38 @@ $light-gray: rgba(94, 86, 88, 0.3);
 
         }
     }
+
+    .date-info {
+        color: $main-body-color;
+        // width: 100%;
+        padding: 16px 8px;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:first-child {
+            margin: -16px 0 0 0;
+        }
+
+        .date {
+            text-align: left;
+            font-size: 1rem;
+            margin: 0;
+            span {
+                display: block;
+                font-weight: normal;
+                color: rgba($main-body-color, 0.7);
+                font-size: 0.85rem;
+                margin-bottom: 4px;
+            }
+        }
+        > span {
+            font-weight: bold;
+            font-size: 2rem;
+        }
+    }
+
     .add-Notifacation {
         .head {
             border-radius: 16px;
@@ -223,12 +265,14 @@ $light-gray: rgba(94, 86, 88, 0.3);
             padding-left: 0;
             padding-right: 0;
             padding-bottom: 8px;
+            background: rgba(255, 255, 255, 0.5);
+
             .button {
                 background-color: transparent;
                 justify-content: start;
             }
         }
-        
+
     }
 }
 
@@ -287,4 +331,17 @@ $light-gray: rgba(94, 86, 88, 0.3);
         }
 
     }
+}
+
+.date-range,.single-date {
+    transition: 0.5s all ease-in-out;
+}
+
+.single-date {
+    text-align: center;
+    font-size: 34px;
+}
+
+.is-close {
+    display: none;
 }
