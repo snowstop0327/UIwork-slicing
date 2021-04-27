@@ -1110,4 +1110,24 @@ footer img {
   align-items: center;
 }
 
+.calendar-container {
+  margin-top: 40px;
+  margin-left: 32px;
+  margin-right: 32px;
+  background-color: transparent;
+}
+
+.week-head {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.week-head li {
+  display: inline-block;
+}
+
 /*# sourceMappingURL=style.css.map */
