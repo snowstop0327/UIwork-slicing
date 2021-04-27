@@ -1,0 +1,23 @@
+.white-theme {
+    background-color: #F3F4F6;
+    ;
+    color: $main-body-color;
+
+}
+
+.is-calendar {
+    height: auto;
+    background-color: #f5f5fa;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);;
+    .top-nav {
+        padding: 8px 24px;
+        h2 {
+            font-size: 1rem;
+            margin: 0;
+        }
+        li {
+            display: inline-flex;
+            align-items: center;
+        }
+    }
+}
