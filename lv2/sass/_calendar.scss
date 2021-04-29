@@ -1,6 +1,15 @@
+%7dayColumn {
+    width: calc(100% / 7);
+    text-align: center;
+    color: #000;
+}
+
+@mixin borderbottom-solid($color,$width) {
+    border-bottom: $width solid $color;
+}
+
 .white-theme {
     background-color: #F3F4F6;
-    ;
     color: $main-body-color;
 
 }
@@ -8,13 +17,16 @@
 .is-calendar {
     height: auto;
     background-color: #f5f5fa;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+
     .top-nav {
         padding: 8px 24px;
-        h2 {
+
+        h1 {
             font-size: 1rem;
             margin: 0;
         }
+
         li {
             display: inline-flex;
             align-items: center;
@@ -23,16 +35,48 @@
 }
 
 .calendar-container {
-   margin-top: 40px; 
-   margin-left: 32px;
-   margin-right: 32px;
-   background-color: transparent;
-}
+    margin-top: 40px;
+    margin-left: 32px;
+    margin-right: 32px;
+    min-height: calc(100vh - 96px);
+    background-color: transparent;
 
-.week-head {
-    display: flex;
-    justify-content: space-around;
-    li {
-        display: inline-block;
+    .week-head {
+        display: flex;
+        justify-content: space-around;
+        // margin-bottom: 8px;
+        @include borderbottom-solid(#e7e7e7,1px);
+
+        li {
+            display: inline-block;
+            font-weight: bold;
+            padding: 8px 0px;
+            @extend %7dayColumn;
+        }
+    }
+
+    .date-column {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+        .week-col {
+            display: flex;
+            width: 100%;
+            @include borderbottom-solid(#e7e7e7,1px);
+            &:last-child() {
+                border-bottom: 0;
+            }
+        }
+
+        li {
+            @extend %7dayColumn;
+            h2 {
+                font-size: 0.875rem;
+                font-weight: normal;
+            }
+            &.last-day, &.next-month {
+                color: rgba(0, 0, 0, 0.3);
+            }
+        }
     }
 }
