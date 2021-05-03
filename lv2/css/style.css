@@ -1181,4 +1181,26 @@ footer img {
   color: rgba(0, 0, 0, 0.3);
 }
 
+.calendar-container .date-column li.today {
+  position: relative;
+}
+
+.calendar-container .date-column li.today h2 {
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.calendar-container .date-column li.today:after {
+  position: absolute;
+  content: "";
+  left: -2.63%;
+  right: -2.63%;
+  top: -2.86%;
+  bottom: -2.86%;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #4F71F7 0%, #6D45E0 100%);
+  z-index: 0;
+}
+
 /*# sourceMappingURL=style.css.map */

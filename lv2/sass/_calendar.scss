@@ -4,7 +4,7 @@
     color: #000;
 }
 
-@mixin borderbottom-solid($color,$width) {
+@mixin borderbottom-solid($color, $width) {
     border-bottom: $width solid $color;
 }
 
@@ -47,7 +47,7 @@
         display: flex;
         justify-content: space-around;
         // margin-bottom: 8px;
-        @include borderbottom-solid(#e7e7e7,1px);
+        @include borderbottom-solid(#e7e7e7, 1px);
 
         li {
             display: inline-block;
@@ -62,10 +62,12 @@
         flex-wrap: wrap;
         height: 100%;
         flex-grow: 1;
+
         .week-col {
             display: flex;
             width: 100%;
-            @include borderbottom-solid(#e7e7e7,1px);
+            @include borderbottom-solid(#e7e7e7, 1px);
+
             &:last-child() {
                 border-bottom: 0;
             }
@@ -73,12 +75,36 @@
 
         li {
             @extend %7dayColumn;
+
             h2 {
                 font-size: 0.875rem;
                 font-weight: normal;
             }
-            &.last-day, &.next-month {
+
+            &.last-day,
+            &.next-month {
                 color: rgba(0, 0, 0, 0.3);
+            }
+
+            &.today {
+                position: relative;
+                h2 {
+                    color: #fff;
+                    position: relative;
+                    z-index: 1;
+                }
+
+                &:after {
+                    position: absolute;
+                    content: "";
+                    left: -2.63%;
+                    right: -2.63%;
+                    top: -2.86%;
+                    bottom: -2.86%;
+                    border-radius: 10px;
+                    background: linear-gradient(180deg, #4F71F7 0%, #6D45E0 100%);
+                    z-index: 0;
+                }
             }
         }
     }
