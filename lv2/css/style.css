@@ -401,6 +401,7 @@ ul {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  z-index: 2;
 }
 
 .fab.add-activity .border {
@@ -1094,7 +1095,7 @@ footer img {
 }
 
 .is-calendar {
-  height: auto;
+  height: 40px;
   background-color: #f5f5fa;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
 }
@@ -1172,6 +1173,10 @@ footer img {
   border-bottom: 0;
 }
 
+.calendar-container .date-column li {
+  position: relative;
+}
+
 .calendar-container .date-column li h2 {
   font-size: 0.875rem;
   font-weight: normal;
@@ -1201,6 +1206,87 @@ footer img {
   border-radius: 10px;
   background: linear-gradient(180deg, #4F71F7 0%, #6D45E0 100%);
   z-index: 0;
+}
+
+.calendar-container .date-column li.today .single-activity {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.calendar-container .date-column li .single-activity {
+  padding: 2px 4px;
+  color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  text-align: left;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+  width: calc(100% - 8px);
+  z-index: 1;
+  height: 20px;
+  line-height: 20px;
+}
+
+.calendar-container .date-column li .single-activity.last-day {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.calendar-container .date-column li .single-activity.future-day {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.calendar-container .date-column li .single-activity.future-day.is-multiday {
+  box-shadow: none;
+}
+
+.calendar-container .date-column li .single-activity.future-day.is-multiday.first-day {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-container .date-column li .single-activity.is-second {
+  top: 68px;
+  position: absolute;
+}
+
+.calendar-container .date-column li .single-activity.is-multiday {
+  width: 100%;
+}
+
+.calendar-container .date-column li .single-activity.first-day {
+  padding-left: 4px;
+  overflow: visible;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-container .date-column li .single-activity.middle-day {
+  border-radius: 0px;
+}
+
+.calendar-container .date-column li .single-activity.end-day {
+  padding-right: 4px;
+}
+
+.calendar-container .date-column li .single-activity.is-3day {
+  z-index: 3;
+  width: 300%;
+}
+
+.calendar-container .date-column li .single-activity.is-3day span {
+  display: block;
+  overflow: hidden;
+}
+
+.calendar-container .date-column li .single-activity.is-6day {
+  z-index: 2;
+  width: 600%;
+}
+
+.calendar-container .date-column li .single-activity.is-6day span {
+  display: block;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -15,7 +15,7 @@
 }
 
 .is-calendar {
-    height: auto;
+    height: 40px;
     background-color: #f5f5fa;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
 
@@ -75,7 +75,7 @@
 
         li {
             @extend %7dayColumn;
-
+            position: relative;
             h2 {
                 font-size: 0.875rem;
                 font-weight: normal;
@@ -104,6 +104,79 @@
                     border-radius: 10px;
                     background: linear-gradient(180deg, #4F71F7 0%, #6D45E0 100%);
                     z-index: 0;
+                }
+                .single-activity {
+                    background-color: rgba(255, 255, 255, 0.5);
+                }
+            }
+
+            .single-activity {
+                padding: 2px 4px;
+                color: rgba(0, 0, 0, 0.3);
+                border-radius: 4px;
+                text-align: left;
+                display: block;
+                overflow: hidden;
+                white-space: nowrap;
+                position: absolute;
+                width: calc(100% - 8px);
+                z-index: 1;
+                height: 20px;
+                line-height: 20px;
+                &.last-day {
+                    background-color: rgba(0, 0, 0, 0.1);
+                }
+                &.future-day {
+                    background: rgba(255, 255, 255, 0.95);
+                    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                    backdrop-filter: blur(4px);
+                    &.is-multiday {
+                        box-shadow: none;
+                        &.first-day {
+                            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                        }
+                    }
+                }
+                &.is-second {
+                    top: 68px;
+                    position: absolute;
+                }
+                &.is-multiday {
+                    width: 100%;
+                    // padding: 0;
+                }
+                &.first-day {
+                    // border-radius: 4px 0px 0px 4px;
+                    padding-left: 4px;
+                    overflow: visible;
+                    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                }
+                &.middle-day {
+                    border-radius: 0px;
+                }
+                &.end-day {
+                    // border-radius: 0px 4px 4px 0px;
+                    padding-right: 4px;
+                }
+                &.is-3day {
+                    z-index: 3;
+                    width: 300%;
+                    span {
+                        display: block;
+                        overflow: hidden;
+                        
+                    }
+                    
+                }
+                &.is-6day {
+                    z-index: 2;
+                    width: 600%;
+                    span {
+                        display: block;
+                        overflow: hidden;
+                        
+                    }
+                    
                 }
             }
         }
