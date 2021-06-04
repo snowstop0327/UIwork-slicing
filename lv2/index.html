@@ -276,8 +276,13 @@
 		$(".modal").toggleClass("is-open");
 	});
 	$(".close-modal").click(function () {
-		$(".modal").toggleClass("is-open");
+		$(".modal").removeClass("is-open");
 	});
+	$("#switch").change(function () {
+        $(".date-range").toggleClass("is-close", this.checked);
+        $(".single-date").toggleClass("is-close");
+
+    }).triggerHandler('click');
 </script>
 
 </html>
