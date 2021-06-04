@@ -8,14 +8,17 @@
     <title>第二關-3</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="white-theme">
     <header class="is-calendar">
-		<ul class="top-nav">
-			<li><img src="img/icon/icon-today-24.svg" alt="今天的日曆" class="icon"></li>
-            <li><h1>November</h1></li>
-			<li><img src="img/icon/icon-search-24.svg" alt="搜尋" class="icon"></li>
-		</ul>
-	</header>
+        <ul class="top-nav">
+            <li><img src="img/icon/icon-today-24.svg" alt="今天的日曆" class="icon"></li>
+            <li>
+                <h1>November</h1>
+            </li>
+            <li><img src="img/icon/icon-search-24.svg" alt="搜尋" class="icon"></li>
+        </ul>
+    </header>
     <main class="calendar-container">
         <ul class="week-head">
             <li>Mo</li>
@@ -156,23 +159,126 @@
                 </li>
                 <li class="next-month">
                     <h2>5</h2>
-                </li>  
+                </li>
             </ul>
-            
+
         </div>
     </main>
     <footer>
-		<ul>
-			<li><a href="index.html"><img src="img/icon/icon-dashboard-24.svg" alt="首頁" class="icon"></a></li>
-			<li class="current-page"><img src="img/icon/icon-calendar-24.svg" alt="行事曆" class="icon"></li>
-			<li><img src="img/icon-member.svg" alt="會員" class="icon"></li>
-		</ul>
-	</footer>
+        <ul>
+            <li><a href="index.html"><img src="img/icon/icon-dashboard-24.svg" alt="首頁" class="icon"></a></li>
+            <li class="current-page"><img src="img/icon/icon-calendar-24.svg" alt="行事曆" class="icon"></li>
+            <li><img src="img/icon-member.svg" alt="會員" class="icon"></li>
+        </ul>
+    </footer>
     <div class="fab add-activity">
-		<span class="border"></span>
-	</div>
-    
-    
+        <span class="border"></span>
+    </div>
+    <div class="modal add-event">
+        <div class="header">
+            <div class="top-nav">
+                <img src="img/icon/arrow-left.svg" alt="" class="icon close-modal">
+                <h2>Add New Event</h2>
+            </div>
+            <div class="title-edit">
+                <input type="text" placeholder="Enter Title" class="">
+                <span class="bar"></span>
+            </div>
+        </div>
+        <ul class="modal-body">
+            <li class="collapse-show">
+                <div class="card add-date">
+                    <div class="head">
+                        <img src="img/icon/clock.svg" alt="時間">
+                        <h3>Event Date</h3>
+                        <div class="switch-button">
+                            <input type="checkbox" id="switch">
+                            <label for="switch">
+                                <span class="switch-title">Day</span>
+                                <span class="switch"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="card-body" id="change-date">
+                        <section class="date-range">
+                            <div class="date-info">
+                                <h3 class="date">
+                                    <span>From</span>
+                                    Nov 19,2020
+                                </h3>
+                                <span>14:30</span>
+                            </div>
+                            <div class="date-info">
+                                <h3 class="date">
+                                    <span>to</span>
+                                    Nov 19,2020
+                                </h3>
+                                <span>15:30</span>
+                            </div>
+                        </section>
+                        <section class="single-date is-close">
+                            <h3 class="date">
+                                Nov 19,2020
+                            </h3>
+                        </section>
+                    </div>
+                </div>
+            </li>
+            <li class="collapse-hide">
+                <div class="card add-location">
+                    <div class="head">
+                        <img src="img/icon/location.svg" alt="時間">
+                        <h3 class="is-placehold">Add Location</h3>
+                    </div>
+                </div>
+            </li>
+            <li class="collapse-show">
+                <div class="card add-Notifacation">
+                    <div class="head">
+                        <img src="img/icon/notification.svg" alt="提醒">
+                        <h3>1 Hour Before</h3>
+                        <div class="button is-close"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="button is-fullwidth icon-left is-gray">
+                            Add Notifacation
+                            <img src="img/icon/add.svg" alt="新增">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="collapse-hide">
+                <div class="card add-people">
+                    <div class="head">
+                        <img src="img/icon/people.svg" alt="成員">
+                        <h3 class="is-placehold">Add People</h3>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="footer">
+            <a class="button is-primary is-fullwidth icon-right" href="#">Save
+                <img src="img/icon/Tick.svg" alt="儲存成功">
+            </a>
+        </div>
+    </div>
+
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+</script>
+<script>
+    $(".add-activity").click(function () {
+        $(".modal").toggleClass("is-open");
+    });
+    $(".close-modal").click(function () {
+        $(".modal").removeClass("is-open");
+    });
+    $("#switch").change(function () {
+        $(".date-range").toggleClass("is-close", this.checked);
+        $(".single-date").toggleClass("is-close");
+
+    }).triggerHandler('click');
+</script>
 
 </html>
