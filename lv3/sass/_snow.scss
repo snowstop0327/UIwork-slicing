@@ -1,0 +1,99 @@
+
+// 變數 //
+$dark-blue: #173E6F;
+$light-blue: #06F3F9;
+$secondary-blue: #0074FF;
+$dark-gray: #3A3F52;
+$ligth-gray: #fafafa;
+$yellow: #F5FB6B;
+
+$space-md: 24px;
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.d-flex  {
+    display: flex;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+/////////////
+
+header {
+    background-color: $light-blue;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    nav {
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        padding-left: $space-md;
+        padding-right: $space-md;
+    }
+    .nav-logo {
+
+    }
+}
+
+main {
+    padding-top: 80px;
+}
+
+.top-hero {
+    background-color: $light-blue;
+    height: 80vh;
+    max-height: 530px;
+    .hero-img {
+        width: 86%;
+        margin: 0 auto;
+        display: block;
+        padding-top: 87px;
+    }
+    h2 {
+        color: $dark-blue;
+        font-size: 3.25rem;
+        position: absolute;
+        padding-left: $space-md;
+        padding-right: $space-md;
+        top: 30%;
+    }
+}
+
+.btn { //按鈕基礎
+    -webkit-appearance: none;
+    align-items: center;
+    box-shadow: none;
+    display: inline-flex;
+    justify-content: flex-start;
+    position: relative;
+    vertical-align: top;
+    border-width: 1px;
+    color: #363636;
+    cursor: pointer;
+    justify-content: center;
+    padding: 12px 45px; 
+    text-align: center;
+    white-space: nowrap;
+    user-select: none;
+    &.main-btn {
+        border-radius: 9999px;
+        color: $dark-blue;
+        background-color: $yellow;
+    }
+}
