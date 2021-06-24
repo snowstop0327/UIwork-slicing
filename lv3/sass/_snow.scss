@@ -1,3 +1,14 @@
+// 變數 //
+$dark-blue: #173E6F;
+$light-blue: #06F3F9;
+$secondary-blue: #0074FF;
+$dark-gray: #3A3F52;
+$ligth-gray: #fafafa;
+$yellow: #F5FB6B;
+
+$space-md: 24px;
+
+
 .top-hero {
     background-color: $light-blue;
     height: 80vh;
@@ -27,6 +38,10 @@
 
 .section-vision {
     color: $secondary-blue;
+    background-image: url(../img/City.svg);
+    background-position: bottom center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .section-achievement {
@@ -47,19 +62,170 @@
 
 .section-features {
     .col {
-        &:first-child {
+        &:last-child {
             padding-top: 96px;
             padding-bottom: 96px;
         }
-        &:last-child {
+
+        &:first-child {
             padding: 0;
         }
-        
+
     }
 }
 
+.section-promo {
+    background-color: $light-blue;
+    padding: 36px 0 28px 0;
 
+    article {
+        padding: 60px 24px;
 
+        h3 {
+            color: white;
+            font-size: 2.25rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
 
+        span {
+            color: rgba(0, 0, 0, 0.3);
+        }
+    }
+}
 
+footer {
+    background-color: $dark-blue;
+    padding-bottom: 40px;
+    padding-top: 98px;
 
+    a {
+        color: white;
+        text-align: center;
+    }
+
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: inherit;
+        margin-bottom: 40px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.app-download-list {
+    width: 100%;
+    display: flex;
+    margin-left: calc(24px - 8px);
+    margin-right: calc(24px - 8px);
+    margin-bottom: 60px;
+
+    li {
+        padding: 0 0.5rem;
+        display: block;
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+
+        a {
+            display: block;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.footer-nav {
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+    width: 100%;
+
+    li {
+        width: 100%;
+
+        a {
+            text-align: center;
+            display: block;
+            padding: 6px;
+        }
+    }
+}
+
+.social-channel {
+    // width: 100%;
+    margin: 0 auto 40px;
+    display: inline-block;
+
+    li+li {
+        margin-left: 24px;
+    }
+
+    li {
+        display: inline-block;
+
+        a {
+            display: block;
+        }
+    }
+
+}
+
+.langugue-choice {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 40px;
+
+    li {
+        &:not(:last-child):after {
+            // position: absolute;
+            content: "|";
+            height: 27px;
+            top: 2px;
+            bottom: 2px;
+            right: -2px;
+            color: white;
+        }
+        a {
+            display: inline-block;
+            margin: 0 16px;
+            line-height: 27px;
+            font-size: 1.125rem;
+        }
+    }
+}
+
+.other-link {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+        display: inline-block;
+
+        // position: relative;
+        a {
+            display: inline-block;
+            margin: 0 8px;
+            line-height: 20px;
+        }
+
+        &:not(:last-child):after {
+            // position: absolute;
+            content: "|";
+            height: 16px;
+            color: #FFFFFF4D;
+            top: 2px;
+            bottom: 2px;
+            right: -2px;
+        }
+    }
+}

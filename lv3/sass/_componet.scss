@@ -16,6 +16,12 @@ img {
     max-width: 100%;
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
 .container {
     max-width: 1024px;
     margin: 0 auto;
@@ -100,6 +106,7 @@ section {
 main {
     padding-top: 80px;
     line-height: 1.4;
+    color: $dark-gray;
 }
 
 .big-section {
@@ -123,4 +130,19 @@ main {
     flex-grow: 1;
     flex-shrink: 1;
     padding: $space-md;
+}
+
+.is-list {
+    display: flex;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+.is-small-list {
+    color: #FFFFFF4D;
+    font-size: 0.875rem;
+    display: inline-block;
+    text-align: center;
+    a {
+        color: inherit;
+    }
 }
