@@ -7,6 +7,20 @@ $ligth-gray: #fafafa;
 $yellow: #F5FB6B;
 
 $space-md: 24px;
+$space-xl: 72px;
+
+@mixin tablet {
+    @media screen and (min-width: 768px) {
+        @content
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: 1024px) {
+        @content
+    }
+}
+
 
 a {
     text-decoration: none;
@@ -99,7 +113,14 @@ section {
         color: $secondary-blue;
         font-weight: 500;
         font-size: 1.75rem;
-        margin: 0;
+        margin: 0 0 14px;
+    }
+    @include tablet {
+        font-size: 1.5rem;
+        h3 {
+            font-size: 3.25rem;
+            margin-bottom: 24px;
+        }
     }
 }
 
@@ -115,15 +136,14 @@ main {
     padding-bottom: 90px;
     text-align: inherit;
 
-    p {
-        
-    }
+    p {}
 }
 
 .columns {
     // margin-left: -$space-md;
     // margin-right: -$space-md;
 }
+
 .col {
     display: block;
     flex-basis: 0;
@@ -137,11 +157,13 @@ main {
     margin-left: 24px;
     margin-right: 24px;
 }
+
 .is-small-list {
     color: #FFFFFF4D;
     font-size: 0.875rem;
     display: inline-block;
     text-align: center;
+
     a {
         color: inherit;
     }

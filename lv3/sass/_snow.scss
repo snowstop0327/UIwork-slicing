@@ -33,6 +33,13 @@ $space-md: 24px;
         padding-right: $space-md;
         top: 30%;
     }
+
+    @include tablet {
+        h2 {
+            text-align: left;
+            top: 20%;
+        }
+    }
 }
 
 
@@ -71,6 +78,33 @@ $space-md: 24px;
             padding: 0;
         }
 
+    }
+    p {
+        margin: 0;
+    }
+
+    @include desktop {
+        display: flex;
+        .col {
+            &:last-child {
+                padding: $space-xl;
+            }
+        }
+        .figure {
+            width: 100%;
+        }
+        &:nth-child(odd) {
+            figure {
+                order:2;
+            }
+        }
+        article {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+        }
     }
 }
 
@@ -141,6 +175,10 @@ footer {
             width: 100%;
             height: auto;
         }
+    }
+    @include tablet {
+        max-width: 300px;
+        margin: 0 auto 60px;
     }
 }
 

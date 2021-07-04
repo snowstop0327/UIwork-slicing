@@ -393,7 +393,13 @@ section {
     color: #0074FF;
     font-weight: 500;
     font-size: 1.75rem;
-    margin: 0; }
+    margin: 0 0 14px; }
+  @media screen and (min-width: 768px) {
+    section {
+      font-size: 1.5rem; }
+      section h3 {
+        font-size: 3.25rem;
+        margin-bottom: 24px; } }
 
 main {
   padding-top: 80px;
@@ -452,6 +458,10 @@ main {
     padding-left: 24px;
     padding-right: 24px;
     top: 30%; }
+  @media screen and (min-width: 768px) {
+    .top-hero h2 {
+      text-align: left;
+      top: 20%; } }
 
 .section-vision {
   color: #0074FF;
@@ -477,6 +487,39 @@ main {
 
 .section-features .col:first-child {
   padding: 0; }
+
+.section-features p {
+  margin: 0; }
+
+@media screen and (min-width: 1024px) {
+  .section-features {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    .section-features .col:last-child {
+      padding: 72px; }
+    .section-features .figure {
+      width: 100%; }
+    .section-features:nth-child(odd) figure {
+      -webkit-order: 2;
+      -ms-flex-order: 2;
+      order: 2; }
+    .section-features article {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+      align-content: center; } }
 
 .section-promo {
   background-color: #06F3F9;
@@ -544,6 +587,10 @@ footer {
       display: block;
       width: 100%;
       height: auto; }
+  @media screen and (min-width: 768px) {
+    .app-download-list {
+      max-width: 300px;
+      margin: 0 auto 60px; } }
 
 .footer-nav {
   -webkit-flex-wrap: wrap;
@@ -610,3 +657,5 @@ footer {
       top: 2px;
       bottom: 2px;
       right: -2px; }
+
+/*# sourceMappingURL=style.css.map */
