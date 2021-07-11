@@ -38,6 +38,17 @@ $space-md: 24px;
         h2 {
             text-align: left;
             top: 20%;
+            max-width: 704px;
+            margin: 0 auto;
+            padding:0;
+            left: 0;
+            right: 0;
+            strong {
+                display: block;
+            }
+        }
+        .hero-img {
+            max-width: 642px;
         }
     }
 }
@@ -136,6 +147,9 @@ footer {
     a {
         color: white;
         text-align: center;
+        &:hover {
+            color: $yellow;
+        }
     }
 
     section {
@@ -149,6 +163,57 @@ footer {
     nav {
         display: flex;
         flex-wrap: wrap;
+    }
+
+    @include desktop {
+        padding-top: 54px;
+        padding-bottom: 48px;
+        .wrap {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        nav {
+            width: calc(75% - 1px);
+            justify-content: flex-start;
+            border-right: 1px solid #FFFFFF4D;
+            align-content: flex-start;
+        }
+        section {
+            width: calc(25% - 28px);
+            margin-bottom: 0;
+            padding-left: 28px;
+        }
+        .is-list {
+            width: 100%;   
+        }
+        .app-download-list {
+            margin: 0;
+            margin-bottom: 48px;
+        }
+        .footer-nav {
+            margin: 0;
+            li {
+                width: auto;
+                
+            }
+        }
+        .social-channel {
+            margin-bottom: 32px;
+            order: 2;
+        }
+        img[alt="LOGO"] {
+            order: 1;
+            margin-bottom: 12px;
+        }
+        .langugue-choice {
+            order: 2;
+            margin-bottom: 0;
+        }
+        .other-link {
+            margin-top: 48px;
+            margin-bottom: $space-md;
+        }
+        
     }
 }
 
@@ -245,6 +310,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 16px;
 
     li {
         display: inline-block;
