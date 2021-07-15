@@ -150,12 +150,15 @@ main {
     flex-grow: 1;
     flex-shrink: 1;
     padding: $space-md;
+    @include desktop {
+        padding: 0;
+    }
 }
 
 .is-list {
     display: flex;
-    margin-left: 24px;
-    margin-right: 24px;
+    margin-left: $space-md;
+    margin-right: $space-md;
 }
 
 .is-small-list {
