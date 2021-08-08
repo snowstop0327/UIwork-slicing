@@ -1,0 +1,86 @@
+// 變數 //
+$main-text: #222222;
+$second-gray: #818181;
+$main-color: #45B7C4;
+
+
+@mixin tablet {
+    @media screen and (min-width: 768px) {
+        @content
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: 1024px) {
+        @content
+    }
+}
+
+
+a {
+    text-decoration: none;
+    color: $main-text;
+    &:hover {
+        color: $main-color;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+
+.btn {
+    //按鈕基礎
+    -webkit-appearance: none;
+    align-items: center;
+    box-shadow: none;
+    display: inline-flex;
+    justify-content: flex-start;
+    position: relative;
+    vertical-align: top;
+    border-width: 1px;
+    color: #363636;
+    cursor: pointer;
+    justify-content: center;
+    padding: 12px 45px;
+    text-align: center;
+    white-space: nowrap;
+    user-select: none;
+
+}
+
+.columns {
+    // margin-left: -$space-md;
+    // margin-right: -$space-md;
+}
+
+.col {
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    @include desktop {
+        padding: 0;
+    }
+}
