@@ -14,7 +14,7 @@ header {
     margin: 0;
     padding-left: 20px;
     padding-right: 20px;
-    background-color: $second-gray;
+    // background-color: $second-gray;
     .main-logo {
         width: 56px;
         height: 56px;
@@ -78,10 +78,65 @@ header {
     }
 }
 
-.fuction-list {
-
-}
-
 .modal-menu {
     margin-top: 82px;
+    height: calc(100vh - 82px);
+    // background-color: yellow;
+}
+
+.fuction-list {
+    align-items: center;
+    margin-bottom: 24px;
+    li {
+        // line-height: 20px;
+
+        &:nth-child(1) {
+            position: relative;
+            padding-right: 18px;
+            &:after {
+                content: "";
+                position: absolute;
+                width: 1px;
+                height: 10px;
+                background-color: rgba(0, 0, 0, 0.16);
+                right: 0;
+                top: 5px;
+
+            }
+        }
+        &:nth-child(2) {
+            margin-right: auto;
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+        &:last-child {
+            width: 24px;
+            a {
+                height: 24px;
+            }
+        }
+        a {
+            display: block;
+            line-height: 20px;
+            color: rgba(0, 0, 0, 0.4);
+            &.is-active {
+                color: $main-text;
+            }
+        }
+    }
+}
+
+.form-search {
+    input {
+        width: calc(100% - 30px);
+        display: block;
+        margin: 0;
+        padding: 15px;
+        text-align: center;
+        background-color: #e9e9e9;
+        border: 0;
+        &::placeholder {
+            color: rgba(129, 129, 129, 1);
+        }
+    }
 }
