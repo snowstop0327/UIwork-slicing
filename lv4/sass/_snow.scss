@@ -81,6 +81,7 @@ header {
 .modal-menu {
     margin-top: 82px;
     height: calc(100vh - 82px);
+    overflow-y: auto;
     // background-color: yellow;
 }
 
@@ -138,5 +139,41 @@ header {
         &::placeholder {
             color: rgba(129, 129, 129, 1);
         }
+    }
+}
+
+.cate-list {
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+    li {
+        width: 50%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+        a {
+            display: block;
+            text-align: center;
+            padding: 24px 0;
+        }
+        &:last-child,&:nth-last-child(2) {
+            border-bottom: 0;
+        }
+    }
+}
+
+.topic-list {
+    .is-title {
+        font-family: serif;
+        font-size: 1.25rem;
+        display: flex;
+        
+        &:after {
+            content: "";
+            display: inline-block;
+            height: 1px;
+            margin-left: 16px;
+            background-color: #000;
+            margin-top: auto;
+            flex-grow: 1;
+        }
+
     }
 }
