@@ -1,6 +1,7 @@
 // 變數 //
 $main-text: #222222;
 $second-gray: #818181;
+$light-gray: #f6f6f6;
 $main-color: #45B7C4;
 
 
@@ -14,6 +15,10 @@ $main-color: #45B7C4;
     @media screen and (min-width: 1024px) {
         @content
     }
+}
+
+body {
+    background-color: $light-gray;
 }
 
 
@@ -37,7 +42,11 @@ ul {
 
 .container {
     max-width: 1024px;
-    margin: 0 auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    @include tablet {
+        margin: 0 auto;
+    }
 }
 
 .d-flex {
@@ -47,6 +56,11 @@ ul {
 .flex-center {
     justify-content: center;
     align-items: center;
+}
+
+.gutter-item {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 
@@ -83,4 +97,9 @@ ul {
     @include desktop {
         padding: 0;
     }
+}
+
+.nav-left-item {
+    display: flex;
+    margin-right: auto;
 }
