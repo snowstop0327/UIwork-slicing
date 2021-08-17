@@ -4,6 +4,7 @@ $second-gray: #818181;
 $light-gray: #f6f6f6;
 $main-color: #45B7C4;
 
+$main-gutter: 20px;
 
 @mixin tablet {
     @media screen and (min-width: 768px) {
@@ -43,8 +44,8 @@ ul {
 
 .container {
     max-width: 1024px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: $main-gutter;
+    margin-right: $main-gutter;
     @include tablet {
         margin: 0 auto;
     }
@@ -60,8 +61,8 @@ ul {
 }
 
 .gutter-item {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: $main-gutter;
+    margin-right: $main-gutter;
 }
 
 .btn {
@@ -102,4 +103,8 @@ ul {
 .nav-left-item {
     display: flex;
     margin-right: auto;
+}
+
+.fixed-top-margin {
+    margin-top: 82px;
 }
