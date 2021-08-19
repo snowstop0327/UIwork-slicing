@@ -5,6 +5,7 @@ $light-gray: #f6f6f6;
 $main-color: #45B7C4;
 
 $main-gutter: 20px;
+$large-gutter: 46px;
 
 @mixin tablet {
     @media screen and (min-width: 768px) {
@@ -28,7 +29,7 @@ a {
     text-decoration: none;
     color: $main-text;
     &:hover {
-        color: $main-color;
+        color: $main-color !important;
     }
 }
 
@@ -42,12 +43,19 @@ ul {
     list-style-type: none;
 }
 
+button {
+    cursor: pointer;
+}
+
 .container {
     max-width: 1024px;
-    margin-left: $main-gutter;
-    margin-right: $main-gutter;
+    margin-left: $large-gutter;
+    margin-right: $large-gutter;
     @include tablet {
         margin: 0 auto;
+    }
+    @include desktop {
+        position: relative;
     }
 }
 
@@ -86,8 +94,11 @@ ul {
 }
 
 .columns {
-    // margin-left: -$space-md;
-    // margin-right: -$space-md;
+    margin-left: -$main-gutter;
+    margin-right: -$main-gutter;
+    @include desktop {
+        display: flex;
+    }
 }
 
 .col {
@@ -95,8 +106,8 @@ ul {
     flex-basis: 0;
     flex-grow: 1;
     flex-shrink: 1;
+    padding: $main-gutter;
     @include desktop {
-        padding: 0;
     }
 }
 
