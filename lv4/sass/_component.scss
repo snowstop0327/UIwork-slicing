@@ -22,6 +22,7 @@ $large-gutter: 46px;
 body {
     background-color: $light-gray;
     font-size: 0.875rem;
+    background-color: #999;
 }
 
 
@@ -52,10 +53,11 @@ button {
     margin-left: $large-gutter;
     margin-right: $large-gutter;
     @include tablet {
-        margin: 0 auto;
+        // margin: 0 auto;
     }
     @include desktop {
         position: relative;
+        margin: 0 auto;
     }
 }
 
