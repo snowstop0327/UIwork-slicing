@@ -5,17 +5,27 @@ header {
     height: 82px;
     transition: ease-in-out 0.5s all;
 
-    .fuction-list, .form-search, .main-nav {
+    .container {
+        margin-left: $large-gutter;
+        margin-right: $large-gutter;
+    }
+
+    .fuction-list,
+    .form-search,
+    .main-nav {
         visibility: hidden;
+        display: none;
         transition: ease-in-out 0.3s all;
         transform: translateY(-100vh);
-        
+
     }
 
     .modal-menu {
         visibility: hidden;
     }
-    .main-logo, .top-main-list {
+
+    .main-logo,
+    .top-main-list {
         opacity: 100;
         transition: ease-in-out 0.3s all;
     }
@@ -25,11 +35,18 @@ header {
         background-color: $light-gray;
         height: 100vh;
         overflow-y: scroll;
-        .fuction-list, .form-search, .main-nav, .modal-menu {
+
+        .fuction-list,
+        .form-search,
+        .main-nav,
+        .modal-menu {
             visibility: visible;
+            display: flex;
             transform: translateY(0);
         }
-        .main-logo, .top-main-list {
+
+        .main-logo,
+        .top-main-list {
             opacity: 0;
         }
     }
@@ -38,18 +55,25 @@ header {
         width: 100%;
         height: 136px;
         background-color: #F6F6F6;
+
         .modal-menu {
             margin-top: 108px;
             transform: translateY(0);
             transition: unset;
         }
-        .fuction-list, .form-search, .main-nav {
+
+        .fuction-list,
+        .form-search,
+        .main-nav {
             visibility: visible;
             transform: translateY(0);
         }
+
         &.is-open {
             height: 615px;
-            .main-logo, .top-main-list {
+
+            .main-logo,
+            .top-main-list {
                 opacity: 100;
             }
         }
@@ -73,6 +97,7 @@ header {
     margin-left: -$large-gutter;
     margin-right: -$large-gutter;
     background-color: $light-gray;
+
     .main-logo {
         width: 56px;
         height: 56px;
@@ -84,23 +109,28 @@ header {
     .top-main-list {
         margin-left: 24px;
         margin-top: $main-gutter;
+
         li {
             margin-right: 24px;
+
             a {
                 display: inline-block;
-            } 
+            }
         }
     }
+
     @include desktop {
         width: auto;
         margin: 0;
         position: absolute;
         background-color: transparent;
         top: 40px;
+
         .main-logo {
             margin-right: 60px;
             margin-top: 0;
         }
+
         .toggle-menu {
             position: absolute;
             top: 24px;
@@ -108,11 +138,13 @@ header {
             margin: 0;
             z-index: 10;
         }
+
         .top-main-list {
             margin-top: 0;
         }
     }
 }
+
 .notice-btn {
     width: 36px;
     height: 36px;
@@ -120,7 +152,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .toggle-menu {
@@ -150,22 +182,27 @@ header {
         &:nth-child(1) {
             top: 10px;
         }
+
         &:nth-child(2) {
             top: 18px;
         }
+
         &:nth-child(3) {
             top: 26px;
         }
     }
+
     &.is-active {
         i {
             &:nth-child(1) {
                 top: 18px;
                 transform: rotateZ(45deg);
             }
+
             &:nth-child(2) {
                 background: transparent;
             }
+
             &:nth-child(3) {
                 top: 18px;
                 transform: rotateZ(-45deg);
@@ -185,12 +222,14 @@ header {
 .fuction-list {
     align-items: center;
     margin-bottom: 24px;
+
     li {
         // line-height: $main-gutter;
 
         &:nth-child(1) {
             position: relative;
             padding-right: 18px;
+
             &:after {
                 content: "";
                 position: absolute;
@@ -202,39 +241,48 @@ header {
 
             }
         }
+
         &:nth-child(2) {
             margin-right: auto;
             padding-left: 18px;
             padding-right: 18px;
         }
+
         &:last-child {
             width: 24px;
+
             a {
                 height: 24px;
             }
         }
+
         a {
             display: block;
             line-height: $main-gutter;
             color: rgba(0, 0, 0, 0.4);
+
             &.is-active {
                 color: $main-text !important;
             }
         }
     }
+
     @include desktop {
         margin-top: 0;
         // margin-left: auto;
         order: 3;
         margin-bottom: 0;
+
         li {
             &:last-child {
                 order: 1;
                 margin-right: 40px;
             }
+
             &:nth-child(2) {
                 order: 3;
             }
+
             &:nth-child(1) {
                 order: 2;
             }
@@ -251,6 +299,7 @@ header {
         text-align: center;
         background-color: #e9e9e9;
         border: 0;
+
         &::placeholder {
             color: rgba(129, 129, 129, 1);
         }
@@ -259,16 +308,19 @@ header {
 
 .col-half-list {
     flex-wrap: wrap;
-    
+
     li {
         width: 50%;
         border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+
         a {
             display: block;
             text-align: center;
             padding: 24px 0;
         }
-        &:last-child,&:nth-last-child(2) {
+
+        &:last-child,
+        &:nth-last-child(2) {
             border-bottom: 0;
         }
     }
@@ -276,6 +328,7 @@ header {
 
 .main-nav {
     margin-bottom: 48px;
+
     @include desktop {
         flex-wrap: nowrap;
         margin-bottom: 0;
@@ -283,9 +336,11 @@ header {
         left: 212px;
         top: 74px;
         z-index: 10;
+
         li {
             border-bottom: 0;
             margin-right: 24px;
+
             a {
                 padding: 0;
             }
@@ -295,12 +350,13 @@ header {
 
 .topic-area {
     margin-bottom: 48px;
+
     .is-title {
         font-family: serif;
         font-size: 1.25rem;
         display: flex;
         margin: 0;
-        
+
         &:after {
             content: "";
             display: inline-block;
@@ -312,12 +368,14 @@ header {
         }
 
     }
+
     .btn-action {
         display: flex;
         align-items: center;
         justify-content: flex-end;
         padding-top: 8px;
         padding-bottom: 8px;
+
         img {
             margin-left: 8px;
         }
@@ -328,8 +386,8 @@ header {
     @include desktop {
         display: flex;
         min-height: 136px;
-        
-        
+
+
         .form-search {
             order: 2;
             margin-left: auto;
@@ -349,5 +407,104 @@ header {
 }
 
 main {
-    margin-top: 82px;
+    margin-top: calc(82px + 78px);
+    .breadcrumbs-list {
+        justify-content: center;
+        li:not(:last-child){
+            margin-right: 32px;
+        }
+        a {
+            color: $second-gray;
+            display: inline-block;
+            border-top: 2px solid $second-gray;
+            padding-top: 4px;
+        }
+    }
 }
+
+.headline {
+    h1 {
+        font-size: 1.375rem;
+        margin-top: $normal-space;
+        margin-bottom: $normal-space;
+    }
+    .headline-subtitle {
+        margin-bottom: $normal-space;
+        text-align: center;
+        line-height: 21px;
+    }
+
+    figure {
+        margin-left: -$main-gutter;
+        margin-right: -$main-gutter;
+        margin-bottom: $large-gutter;
+        img {
+            width: 100%;
+            display: block;
+            margin-bottom: $small-space;
+        }
+        figcaption {
+            margin-left: $main-gutter;
+            margin-right: $main-gutter;
+            font-size: 0.75rem;
+            line-height: 16.8px;
+            span {
+                display: block;
+            }
+        }
+    }
+}
+
+.main-content {
+    .main-authors-info {
+        margin: 0 auto $small-space;
+        padding-bottom: 32px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+
+        img {
+            width: 64px;
+            height: 64px;
+            margin-right: 76px;
+        }
+        h4 {
+            font-size: 1rem;
+            margin-bottom: $xs-space;
+        }
+        p {
+            font-size: 0.75rem;
+            line-height: 18px;
+        }
+    }
+    .article-main-body {
+        line-height: 30px;
+        p {
+            margin: 0;
+            margin-bottom: $small-space;
+        }
+        h4 {
+            font-size: 1.375rem;
+            text-align: center;
+            margin-top: 4px;
+            margin-bottom: $main-gutter;
+        }
+    }
+    .tag-group {
+        margin-bottom: 28px;
+        li {
+            display: inline-block;
+            margin-bottom: $xs-space;
+            &:not(:last-child) {
+                margin-right: $xs-space;
+            }
+            a {
+                color: $second-gray;
+                padding: 0 12px;
+                background-color: #fff;
+                display: inline-block;
+                line-height: 17px;
+                font-size: 0.75rem;
+            }
+        }
+    }
+}
+

@@ -7,6 +7,10 @@ $main-color: #45B7C4;
 $main-gutter: 20px;
 $large-gutter: 46px;
 
+$normal-space: 24px;
+$small-space: 16px;
+$xs-space: 8px;
+
 @mixin tablet {
     @media screen and (min-width: 768px) {
         @content
@@ -22,6 +26,7 @@ $large-gutter: 46px;
 body {
     background-color: $light-gray;
     font-size: 0.875rem;
+    color: $main-text;
     // background-color: #999;
 }
 
@@ -48,10 +53,14 @@ button {
     cursor: pointer;
 }
 
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+
 .container {
     max-width: 1024px;
-    margin-left: $large-gutter;
-    margin-right: $large-gutter;
+    margin-left: $main-gutter;
+    margin-right: $main-gutter;
     @include tablet {
         // margin: 0 auto;
     }
@@ -121,3 +130,12 @@ button {
 .fixed-top-margin {
     margin-top: 82px;
 }
+
+.light-text {
+    color: $second-gray;
+}
+
+.serif-font {
+    font-family: "Noto Serif TC",serif;
+}
+
