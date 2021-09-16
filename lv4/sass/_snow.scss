@@ -55,6 +55,11 @@ header {
         width: 100%;
         height: 136px;
         background-color: #F6F6F6;
+        z-index: 100;
+
+        .container {
+            margin: 0 auto;
+        }
 
         .modal-menu {
             margin-top: 108px;
@@ -66,6 +71,7 @@ header {
         .form-search,
         .main-nav {
             visibility: visible;
+            display: flex;
             transform: translateY(0);
         }
 
@@ -94,9 +100,7 @@ header {
     min-height: 82px;
     width: 100vw;
     z-index: 10;
-    margin-left: -$large-gutter;
-    margin-right: -$large-gutter;
-    background-color: $light-gray;
+    @include marginOut($large-gutter) background-color: $light-gray;
 
     .main-logo {
         width: 56px;
@@ -311,7 +315,7 @@ header {
 
     li {
         width: 50%;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+        @include border-style(bottom);
 
         a {
             display: block;
@@ -408,11 +412,14 @@ header {
 
 main {
     margin-top: calc(82px + 78px);
+
     .breadcrumbs-list {
         justify-content: center;
-        li:not(:last-child){
+
+        li:not(:last-child) {
             margin-right: 32px;
         }
+
         a {
             color: $second-gray;
             display: inline-block;
@@ -427,7 +434,9 @@ main {
         font-size: 1.375rem;
         margin-top: $normal-space;
         margin-bottom: $normal-space;
+        text-align: center;
     }
+
     .headline-subtitle {
         margin-bottom: $normal-space;
         text-align: center;
@@ -435,19 +444,20 @@ main {
     }
 
     figure {
-        margin-left: -$main-gutter;
-        margin-right: -$main-gutter;
-        margin-bottom: $large-gutter;
+        @include marginOut($main-gutter) margin-bottom: $large-gutter;
+
         img {
             width: 100%;
             display: block;
             margin-bottom: $small-space;
         }
+
         figcaption {
             margin-left: $main-gutter;
             margin-right: $main-gutter;
             font-size: 0.75rem;
             line-height: 16.8px;
+
             span {
                 display: block;
             }
@@ -466,21 +476,29 @@ main {
             height: 64px;
             margin-right: 76px;
         }
+
         h4 {
             font-size: 1rem;
             margin-bottom: $xs-space;
         }
+
         p {
             font-size: 0.75rem;
             line-height: 18px;
         }
     }
+
     .article-main-body {
         line-height: 30px;
+
         p {
             margin: 0;
             margin-bottom: $small-space;
         }
+        .last-paragraph {
+            margin-bottom: 40px;
+        }
+
         h4 {
             font-size: 1.375rem;
             text-align: center;
@@ -488,14 +506,19 @@ main {
             margin-bottom: $main-gutter;
         }
     }
+
     .tag-group {
         margin-bottom: 28px;
+
         li {
             display: inline-block;
             margin-bottom: $xs-space;
+            line-height: initial;
+
             &:not(:last-child) {
                 margin-right: $xs-space;
             }
+
             a {
                 color: $second-gray;
                 padding: 0 12px;
@@ -506,5 +529,59 @@ main {
             }
         }
     }
-}
 
+    .promo-member-invite {
+        background-color: #fff;
+        padding: $main-gutter;
+        background-image: url(../img/illustrator-inviite.svg);
+        background-position: right -20px bottom;
+        background-size: 40%;
+        background-repeat: no-repeat;
+        position: relative;
+        @include marginOut($main-gutter);
+        margin-bottom: 40px;
+
+        &:before {
+            content: "";
+            width: 100%;
+            height: 90px;
+            background: linear-gradient(180deg, rgba(246, 246, 246, 0) 0%, $light-gray 100%);
+            display: block;
+            position: absolute;
+            top: -130px;
+            left: 0;
+            right: 0;
+        }
+
+        h3 {
+            font-size: 1.375rem;
+            margin-bottom: $xs-space;
+        }
+
+        p {
+            &:not(:last-child) {
+                margin-bottom: $normal-space;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        .btn {
+            margin-bottom: 55px;
+        }
+
+    }
+
+    .copyright-text {
+        @include border-style(top);
+        padding-top: $small-space;
+        line-height: initial;
+        a {
+            color: $second-gray;
+            text-decoration: underline;
+        }
+    }
+
+    
+}

@@ -23,6 +23,15 @@ $xs-space: 8px;
     }
 }
 
+@mixin marginOut($margin-number) {
+    margin-left: -$margin-number;
+    margin-right: -$margin-number; 
+}
+
+@mixin border-style($border-direction) {
+    border-#{$border-direction}: 1px solid rgba(0, 0, 0, 0.16);
+}
+
 body {
     background-color: $light-gray;
     font-size: 0.875rem;
@@ -36,6 +45,11 @@ a {
     color: $main-text;
     &:hover {
         color: $main-color !important;
+    }
+
+    &.link-border-bottom {
+        border-bottom: 2px solid $main-color;
+        display: inline-block;
     }
 }
 
@@ -102,6 +116,14 @@ h1,h2,h3,h4,h5,h6 {
     white-space: nowrap;
     user-select: none;
 
+}
+
+.btn-primary {
+    background-color: $main-color;
+    color: #fff;
+    padding: 10px 24px;
+    border: 0;
+    border-radius: 100px;
 }
 
 .columns {
