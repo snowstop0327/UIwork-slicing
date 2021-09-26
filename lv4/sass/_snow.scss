@@ -4,6 +4,7 @@ header {
     width: 100vw;
     height: 82px;
     transition: ease-in-out 0.5s all;
+    z-index: 100;
 
     .container {
         margin-left: $large-gutter;
@@ -495,6 +496,7 @@ main {
             margin: 0;
             margin-bottom: $small-space;
         }
+
         .last-paragraph {
             margin-bottom: 40px;
         }
@@ -567,6 +569,7 @@ main {
                 margin-bottom: 0;
             }
         }
+
         .btn {
             margin-bottom: 55px;
         }
@@ -577,11 +580,157 @@ main {
         @include border-style(top);
         padding-top: $small-space;
         line-height: initial;
+        color: #b8b8b8;
+
         a {
-            color: $second-gray;
+            color: inherit;
             text-decoration: underline;
+        }
+
+        &:after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #b8b8b8;
+            display: block;
+            margin: 80px auto;
         }
     }
 
-    
+    .author-group {
+        li {
+            margin-bottom: 40px;
+        }
+        .author-photo {
+            width: 20%;
+            min-height: 20%;
+            margin-right: 16px;
+            display: table-cell;
+            vertical-align: middle;
+            img {
+                width: 100%;
+                display: block;
+            }
+        }
+
+        figure {
+            margin: 0;
+            margin-inline-start: 0;
+            margin-inline-end: 0;
+
+
+        }
+
+        button {
+            color: $main-color;
+            border-radius: 24px;
+            padding: 3px 8px 3px 24px;
+            border: 1px solid $main-color;
+            background: #fff;
+            position: relative;
+            margin-top: 4px;
+            height: 24px;
+            &:before {
+                content: "";
+                position: absolute;
+                width: 13px;
+                height: 1px;
+                background-color: $main-color;
+                top: 10px;
+                left: 6px;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                width: 1px;
+                height: 13px;
+                background-color: $main-color;
+                top: 4px;
+                left: 12px;
+            }
+
+        }
+
+        figcaption {
+            flex: 1;
+            position: relative;
+            a {
+                display: inline-block;
+                margin: 0 0 $xs-space;
+            }
+
+            h4 {
+                text-align: left;
+                margin: 0;
+                font-size: 1rem;
+                line-height: 30px;
+                &:after {
+                    content: "";
+                    background: rgba(0, 0, 0, 0.16);
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    width: 100%;
+                    height: 1px;
+                    top: calc(30px + 8px);
+                }
+            }
+            span {
+                display: block;
+                padding-top: $xs-space;
+                line-height: initial;
+            }
+        }
+
+    }
+
+}
+
+.comment-area {
+    background-color: #fff;
+    padding: $main-gutter;
+    h3 {
+        font-size: 1.25rem;
+        margin-bottom: 30px;
+        img {
+            margin-right: 4px;
+        }
+        span {
+            color: $main-color;
+            padding-left: 4px;
+        }
+    }
+    .login-btn {
+        padding: $large-gutter 0;
+        display: block;
+        text-align: center;
+        background: repeating-linear-gradient(-45deg, 
+        #fff 0, #fff 5%, 
+        $light-gray 5%, $light-gray 10%);
+        margin-bottom: $large-gutter;
+        span {
+            font-size: 0.75rem;
+            border-bottom: 2px solid $main-color;
+            padding-bottom: 3px;
+        }
+    }
+    .users-comment {
+        .user-name {
+            margin-right: $xs-space;
+            margin-bottom: $xs-space;
+        }
+        .comment-time {
+            font-size: 0.75rem;
+        }
+        p {
+            line-height: initial;
+            margin: 0;
+        }
+        li:not(:last-child) {
+            @include border-style(bottom);
+            margin-bottom: $main-gutter;
+            padding-bottom: $main-gutter;
+        }
+    }
 }
