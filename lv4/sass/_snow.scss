@@ -833,9 +833,9 @@ main {
 }
 
 footer {
-    @include marginOut($main-gutter);
     background-color: #151719;
-    padding: $main-gutter $main-gutter 40px;
+    padding-top: $main-gutter;
+    padding-bottom: 40px;
     .share-button-group {
         justify-content: center;
         margin-top: $large-gutter;
@@ -849,8 +849,8 @@ footer {
         }
     }
     .footer-nav {
-        
         margin-bottom: $small-space;
+        @include marginOut(-$main-gutter);
         li {
             display: inline-block;
             margin-bottom: 12px;
@@ -867,17 +867,22 @@ footer {
         color: $second-gray;
         text-align: center;
         line-height: 20px;
-        margin: 0;
+        @include marginOut(-$main-gutter);
+        margin-top: 0;
+        margin-bottom: 0;
+
         &:last-child {
             margin-bottom: 40px;
         }
     }
     @include tablet {
-        @include marginOut(100px);
         .footer-nav {
             display: flex;
             justify-content: center;
         }
+    }
+    @include desktop {
+        width: 100%;
     }
 }
 
