@@ -55,6 +55,9 @@ a {
 
 img {
     max-width: 100%;
+    &:hover {
+        opacity: 0.7;
+    }
 }
 
 ul {
@@ -71,12 +74,18 @@ h1,h2,h3,h4,h5,h6 {
     margin: 0;
 }
 
+::selection {
+    color: white;
+    background-color: $main-color;
+}
+
 .container {
     max-width: 1024px;
     margin-left: $main-gutter;
     margin-right: $main-gutter;
     @include tablet {
-        // margin: 0 auto;
+        margin-left: 100px;
+        margin-right: 100px;
     }
     @include desktop {
         position: relative;

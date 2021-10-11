@@ -451,6 +451,9 @@ main {
             width: 100%;
             display: block;
             margin-bottom: $small-space;
+            &:hover {
+                opacity: 1;
+            }
         }
 
         figcaption {
@@ -461,6 +464,16 @@ main {
 
             span {
                 display: block;
+            }
+        }
+    }
+    @include tablet {
+        figure {
+            figcaption {
+                text-align: center;
+                span {
+                    display: inline-block;
+                }
             }
         }
     }
@@ -574,6 +587,10 @@ main {
             margin-bottom: 55px;
         }
 
+        @include tablet {
+            background-size: 30%;
+        }
+
     }
 
     .copyright-text {
@@ -682,6 +699,18 @@ main {
                 line-height: initial;
             }
         }
+        @include tablet {
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            li {
+                width: calc(50% - #{$main-gutter});
+                &:not(:nth-child(even)) {
+                    margin-right: $main-gutter;
+                }
+            }
+        }
 
     }
 
@@ -708,6 +737,7 @@ main {
                 font-size: 1rem;
                 min-height: 44px;
                 line-height: 22px;
+                margin-right: auto;
             }
             .is-number {
                 font-size: 2rem;
@@ -723,13 +753,31 @@ main {
                 padding: $main-gutter 0;
                 img {
                     order: 2;
-                    width: 25%;
+                    max-width: 25%;
                     margin-left: $main-gutter;
                 }
                 figcaption {
                     min-height: 44px;
+                    margin-right: auto;
                 }
             }
+        }
+    }
+    @include desktop {
+        > article {
+            width: calc(60% - #{$main-gutter});
+            margin-right: $main-gutter;
+            position: relative;
+        }
+        .aside-news {
+            width: calc(40% - #{$main-gutter});
+        }
+        > article, .aside-news {
+            display: inline-flex;
+            flex-wrap: wrap;
+        }
+        .promo-member-invite {
+            @include marginOut(0);
         }
     }
 
@@ -755,8 +803,8 @@ main {
         display: block;
         text-align: center;
         background: repeating-linear-gradient(-45deg, 
-        #fff 0, #fff 5%, 
-        $light-gray 5%, $light-gray 10%);
+        #fff 0, #fff 15px, 
+        $light-gray 15px, $light-gray 30px);
         margin-bottom: $large-gutter;
         span {
             font-size: 0.75rem;
@@ -787,7 +835,7 @@ main {
 footer {
     @include marginOut($main-gutter);
     background-color: #151719;
-    padding: $main-gutter;
+    padding: $main-gutter $main-gutter 40px;
     .share-button-group {
         justify-content: center;
         margin-top: $large-gutter;
@@ -801,11 +849,14 @@ footer {
         }
     }
     .footer-nav {
+        
         margin-bottom: $small-space;
         li {
             display: inline-block;
-            margin-right: 12px;
             margin-bottom: 12px;
+            &:not(:last-child) {
+                margin-right: 12px;
+            }
         }
         a {
             color: #fff;
@@ -819,6 +870,13 @@ footer {
         margin: 0;
         &:last-child {
             margin-bottom: 40px;
+        }
+    }
+    @include tablet {
+        @include marginOut(100px);
+        .footer-nav {
+            display: flex;
+            justify-content: center;
         }
     }
 }
@@ -867,5 +925,41 @@ footer {
     .btn-light, .fuction-group {
         margin-top: $xs-space;
         margin-bottom: $xs-space;
+    }
+    @include tablet {
+        @include marginOut(100px);
+        .btn-light {
+            &:first-child {
+                margin-left: 100px;
+            }
+        }
+        .fuction-group {
+            margin-right: 100px;
+        }
+    }
+    @include desktop {
+        position: relative;
+        @include marginOut(0);
+        background-color: transparent;
+        bottom: auto;
+        top: -20px;
+        margin-bottom: 64px;
+        .btn-light {
+            display: none;
+        }
+        .fuction-group {
+            justify-content: center;
+            margin-right: auto;
+            li {
+                a {
+                    flex-wrap: nowrap;
+                    max-width: 100px;
+                    font-size: 1rem;
+                    img {
+                        margin-right: $xs-space;
+                    }
+                }
+            }
+        }
     }
 }
